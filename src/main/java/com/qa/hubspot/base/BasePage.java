@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -114,6 +114,18 @@ public class BasePage {
 		return prop;
 	}
 	
+	//take screenshot:
+		public String getScreenshot(){
+			File src  = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+			String path = System.getProperty("user.dir")+"/screenshots/"+System.currentTimeMillis()+".png";
+			File destination = new File(path);
+			try {
+				FileUtils.copyFile(src, destination);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return path;
+		}
 	
 
 }
