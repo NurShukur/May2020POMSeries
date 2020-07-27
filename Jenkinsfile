@@ -63,7 +63,8 @@ pipeline {
 
         stage('edge') {
           steps {
-            sh 'mvn tests -Denv=stage'
+            sh '''mvn test -Denv=stage
+'''
           }
         }
 
