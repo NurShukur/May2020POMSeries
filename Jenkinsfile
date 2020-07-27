@@ -66,7 +66,15 @@ pipeline {
 
     stage('Publish Reports') {
       steps {
-        sh 'echo "run reports"'
+        script {
+            allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: '/allure-results']]
+            ])
+    }
       }
     }
 
