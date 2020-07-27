@@ -50,7 +50,7 @@ public class BasePage {
 			}
 		else if (browserName.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
-			driver =new EdgeDriver() ; 
+			tlDriver.set(new EdgeDriver(optionsManager.getEdgeOptions()));
 		}
 		else {	
 			System.out.println("Your browser" +browserName+ " not founded..., please pass valid browser");
