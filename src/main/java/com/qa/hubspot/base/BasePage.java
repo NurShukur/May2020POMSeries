@@ -22,7 +22,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BasePage {
 
 
-	public WebDriver driver;
+	public  WebDriver driver;
 	
 	public Properties prop; 
 	
