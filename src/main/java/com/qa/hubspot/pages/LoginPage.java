@@ -22,7 +22,7 @@ public class LoginPage  extends BasePage {
 		By emailId =By.id("username");
 		By password =By.id("password");
 		By loginbtn =By.id("loginBtn");
-		By signUpLink = By.xpath("//i18n-string[text()='Sign up]");
+		By signUpLink = By.xpath("//i18n-string[text()='Sign up1]");
 		
 		 
 		
