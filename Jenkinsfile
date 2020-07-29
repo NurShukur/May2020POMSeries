@@ -61,20 +61,30 @@ pipeline {
           }
         }
 
+        stage('edge') {
+          steps {
+            sh '''mvn test -Denv=stage
+'''
+          }
+        }
+
       }
     }
 
     stage('Publish Reports') {
       steps {
-        sh ''' allure([
-                    includeProperties: false,
-                    jdk: \'\',
-                    properties: [],
-                    reportBuildPolicy: \'ALWAYS\',
-                    results: [[path: \'target/allure-results\']]
-            ])'''
+        script {
+          allure([
+            includeProperties: false,
+            jdk: '',
+            properties: [],
+            reportBuildPolicy: 'ALWAYS',
+            results: [[path: '/allure-results']]
+          ])
         }
-      }
 
+      }
     }
+
   }
+}
