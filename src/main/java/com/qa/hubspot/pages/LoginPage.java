@@ -22,8 +22,11 @@ public class LoginPage  extends BasePage {
 		By emailId =By.id("username");
 		By password =By.id("password");
 		By loginbtn =By.id("loginBtn");
-		By signUpLink = By.xpath("//i18n-string[text()='Sign up']");
+
 		
+		By signUpLink = By.xpath("//i18n-string[text()='Sign up']");
+		     
+
 		 
 		
 	//2.constructor of the page class;
@@ -38,7 +41,7 @@ public class LoginPage  extends BasePage {
 	 public String getLoginPageTitle () {	 
 		return elementUtil.doGetPageTitleWithIsTitle(10, Constants.LOGIN_PAGE_TITLE); 
 	 }
-	@Step("getting sign up link presents")
+	@Step("getting sign up link  presents")
 	 public boolean SignUpLinkExist () {
 	
 		//return elementUtil.doIsDisplayed(signUpLink); 
