@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import com.qa.hubspot.base.BaseTest;
 import com.qa.hubspot.pages.HomePage;
 import com.qa.hubspot.utils.Constants;
-import com.qa.hubspot.utils.ElementUtil;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -40,6 +39,9 @@ public void homePageSetup() {
 
 	}
 	
+	
+	
+	
 	@Description("verify HomePage header on home page ")
 	@Severity(SeverityLevel.MINOR)
 	@Test (priority = 1)
@@ -49,7 +51,7 @@ public void homePageSetup() {
 	Assert.assertEquals(header,Constants.HOME_PAGE_HEADER);
 
 		}
-	@Description("verify HomePage logged in accout on home page ")
+	@Description("verify HomePage logged in account on home page ")
 	@Severity(SeverityLevel.CRITICAL)
 	@Test (priority = 3)
 	public void verifyLoggedinUserTest() {

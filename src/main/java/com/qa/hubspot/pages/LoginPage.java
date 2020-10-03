@@ -15,8 +15,6 @@ public class LoginPage  extends BasePage {
 	ElementUtil elementUtil; 
 
 	
-	
-	
 	//1.ByLocators -Object Repository 
 	
 		By emailId =By.id("username");
@@ -27,15 +25,13 @@ public class LoginPage  extends BasePage {
 		By signUpLink = By.xpath("//i18n-string[text()='Sign up']");
 		     
 
-		 
-		
 	//2.constructor of the page class;
 	public LoginPage (WebDriver driver) {
 		this.driver=driver;  
 		elementUtil =new ElementUtil(this.driver) ; 
 	}
 	
-	//3. page ctions.
+	//3. page actions.
 	
 	@Step("getting login page title")
 	 public String getLoginPageTitle () {	 

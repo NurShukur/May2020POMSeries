@@ -3,6 +3,7 @@ package com.qa.hubspot.utils;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.function.Function;
 
 import org.openqa.selenium.Alert;
@@ -17,12 +18,14 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.qa.hubspot.base.BasePage;
+
 public class ElementUtil {
 	
 
 	private WebDriver driver;
 	public JavaScriptUtil js;
-	
+
 	//constructor
 	public ElementUtil(WebDriver driver) {
 		this.driver = driver;
@@ -37,8 +40,10 @@ public class ElementUtil {
 	public WebElement getElement(By locator) {
 		WebElement element = null;
 		try {
+		
 			element = driver.findElement(locator);
-			js.flash(element);
+			 js.flash(element);
+			
 		} catch (Exception e) {
 			System.out.println("element could not be created..." + locator);
 		}

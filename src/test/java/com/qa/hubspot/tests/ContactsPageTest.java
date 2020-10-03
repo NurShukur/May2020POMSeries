@@ -1,6 +1,6 @@
 package com.qa.hubspot.tests;
 
-import org.openqa.selenium.By;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -56,7 +56,7 @@ public void contactPageSetup() {
 		Assert.assertEquals(header, Constants.CONTACTS_PAGE_HEADER);
 	
 	}
-	@DataProvider
+	@DataProvider()
 	public Object [][] getContactsTestData() {
 		
 		Object data [][]=ExcelUtil.getTestData(Constants.CONTACTS_PAGE_SHEET_NAME); 

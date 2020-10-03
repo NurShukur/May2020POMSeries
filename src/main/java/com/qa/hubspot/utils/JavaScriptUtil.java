@@ -16,7 +16,7 @@ public class JavaScriptUtil {
 	public void flash(WebElement element) {
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		String bgcolor = element.getCssValue("backgroundColor");
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 5; i++) {
 			changeColor("rgb(0,200,0)", element);// 1
 			changeColor(bgcolor, element);// 2
 		}
@@ -95,6 +95,11 @@ public class JavaScriptUtil {
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("document.getElementByName('" + name + "').value='" + value + "'");
 	}
+	
+	 public static double getPageLoadTime(WebDriver driver){
+	        JavascriptExecutor js = (JavascriptExecutor)driver;   
+	      return (Double)((JavascriptExecutor)driver).executeScript("return Date.now() - performance.timeOrigin");  
+	    }	
 
 	public void checkPageIsReady() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
